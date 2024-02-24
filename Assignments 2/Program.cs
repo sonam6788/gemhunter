@@ -25,11 +25,28 @@ namespace ASSIGNMENT_2
         }
     }
 
+    public class Position
+    {
+        public int X { get; set; }
+        public int Y { get; set; }
+
+        public Position(int x, int y)
+        {
+            X = x;
+            Y = y;
+        }
+    }
+
+
+
     public class Player
     {
         public String Name { get; }
         public Game Class1 { get; set; }
         public int GemCount { get; set; }
+
+        public Position Position { get; set; }
+
 
         public Player(string name, Game Game)
         {
@@ -37,9 +54,29 @@ namespace ASSIGNMENT_2
             Game = Class1;
             GemCount = 0;
         }
-        public void Move(char direction)
+        public bool move(char direction)
         {
+
             // Implement movement logic here
+
+            switch (direction)
+            {
+                case 'U':
+                   Position.X--;
+                    break;
+                case 'D':
+                    Position.X++;
+                    break;
+                case 'L':
+                    Position.Y--;
+                    break;
+                case 'R':
+                    Position.Y++;
+                    break;
+                default:
+                    return false;
+            }
+            return true;
         }
     }
     public class Cell
