@@ -96,6 +96,15 @@ namespace ASSIGNMENT_2
         public void Display()
         {
             //print the current state of the board to the console
+
+            for(int i=0; i<Grid.GetLength(0); i++)
+            {
+                for(int j=0; j<Grid.GetLength(1); j++)
+                {
+                    Console.Write(Grid[i, j].Occupant + " ");
+                }
+                Console.WriteLine();
+            }
         }
 
         public bool IsValidMove(Player Player, char direction)
